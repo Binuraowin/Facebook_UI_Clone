@@ -20,6 +20,21 @@ class HomeScreen extends StatelessWidget {
               letterSpacing: -1.2,
             ),
           ),
+          centerTitle: false,
+          floating: true,
+          actions: <Widget>[
+          CircleButtton (
+              icon:Icons.search,
+            iconSize:30,
+            onPressed:() =>{}
+            ) 
+          ],
+        ),
+        SliverToBoxAdapter(
+          child:Container(
+            height:100.0,
+            color:Colors.red,
+          )
         )
         ]
       ),
