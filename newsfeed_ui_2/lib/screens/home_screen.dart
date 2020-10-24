@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:newsfeed_ui_2/config/palette.dart';
+import 'package:newsfeed_ui_2/widgets/circle_button.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,8 +25,13 @@ class HomeScreen extends StatelessWidget {
           centerTitle: false,
           floating: true,
           actions: <Widget>[
-          CircleButtton (
-              icon:Icons.search,
+          CircleButton(
+            icon:Icons.search,
+            iconSize:30,
+            onPressed:() =>{}
+            ),
+             CircleButton(
+            icon:MdiIcons.facebookMessenger,
             iconSize:30,
             onPressed:() =>{}
             ) 
