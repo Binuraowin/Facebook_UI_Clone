@@ -34,7 +34,9 @@ class CreatePostContainer extends StatelessWidget {
             height:10.0,
             thickness:0.5
           ),
-          Row(
+          Container(
+            height: 40.0,
+            child:  Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:[
               FlatButton.icon(onPressed: () => print("live"), 
@@ -60,6 +62,8 @@ class CreatePostContainer extends StatelessWidget {
               )
             ]
           )
+          )
+        
         ]
       ),
     );
