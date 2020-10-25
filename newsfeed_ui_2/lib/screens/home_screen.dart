@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:newsfeed_ui_2/config/palette.dart';
+import 'package:newsfeed_ui_2/data/data.dart';
 import 'package:newsfeed_ui_2/widgets/circle_button.dart';
+import 'package:newsfeed_ui_2/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -34,14 +36,11 @@ class HomeScreen extends StatelessWidget {
             icon:MdiIcons.facebookMessenger,
             iconSize:30,
             onPressed:() =>{}
-            ) 
+            )   
           ],
         ),
         SliverToBoxAdapter(
-          child:Container(
-            height:100.0,
-            color:Colors.red,
-          )
+          child:CreatePostContainer(currentUser:currentUser),
         )
         ]
       ),
