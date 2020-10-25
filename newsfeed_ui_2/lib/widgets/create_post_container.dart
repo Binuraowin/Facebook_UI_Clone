@@ -46,7 +46,7 @@ class CreatePostContainer extends StatelessWidget {
               const VerticalDivider(
                 width:8.0
               ),
-                  FlatButton.icon(onPressed: () => print("phopto"), 
+                  FlatButton.icon(onPressed: () => print("photo"), 
               icon: const Icon(Icons.photo_library, color: Colors.green,), 
               label: Text("Photo")
               ),
