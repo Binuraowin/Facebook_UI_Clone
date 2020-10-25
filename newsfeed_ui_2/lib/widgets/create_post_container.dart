@@ -57,9 +57,9 @@ class CreatePostContainer extends StatelessWidget {
               icon: const Icon(Icons.video_call, color: Colors.purple,), 
               label: Text("Room")
               ),
-              const VerticalDivider(
-                width:8.0
-              )
+              // const VerticalDivider(
+              //   width:8.0
+              // )
             ]
           )
           )
