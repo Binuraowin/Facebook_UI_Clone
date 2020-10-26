@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsfeed_ui_2/config/palette.dart';
 import 'package:newsfeed_ui_2/models/user_model.dart';
 import 'package:newsfeed_ui_2/models/models.dart';
+import 'package:newsfeed_ui_2/widgets/profile_avatar.dart';
 
 class Rooms extends StatelessWidget {
   final List<User> onlineUsers;
@@ -24,13 +25,22 @@ class Rooms extends StatelessWidget {
              child: _CreateRoomButton(),
              );
            }
-
-           return Container(
-             margin: const EdgeInsets.all(2.0),
-             height: 20.0,
-             width: 20.0,
-             color: Colors.red,
+final User user = onlineUsers[index-1];
+           return Padding(padding: const EdgeInsets.symmetric(horizontal: 8.0),
+           child: ProfileAvatar(
+             imageUrl: user.imageUrl,
+             
+            //  imageUrl: user.imageUrl,
+           isActive: true,
+           ),
            );
+
+          //  Container(
+          //    margin: const EdgeInsets.all(2.0),
+          //    height: 20.0,
+          //    width: 20.0,
+          //    color: Colors.red,
+          //  );
          }
          ),
     );
