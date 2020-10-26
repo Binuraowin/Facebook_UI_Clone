@@ -14,7 +14,7 @@ class Rooms extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60.0,
-      color: Colors.orange,
+      color: Colors.white,
        child: ListView.builder(
          scrollDirection: Axis.horizontal,
          itemCount: 1+ onlineUsers.length,
@@ -59,8 +59,9 @@ class _CreateRoomButton extends StatelessWidget {
            size:35.0,
            color: Colors.white,
            ),
-             )
-           
+             ),
+            const SizedBox(width: 4.0,),
+            Text('Create \n Room')
          ],
        ),
       );
