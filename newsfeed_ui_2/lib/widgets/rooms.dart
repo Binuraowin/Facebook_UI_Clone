@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsfeed_ui_2/config/palette.dart';
 import 'package:newsfeed_ui_2/models/user_model.dart';
 import 'package:newsfeed_ui_2/models/models.dart';
 
@@ -49,6 +50,19 @@ class _CreateRoomButton extends StatelessWidget {
         width: 3.0,
         color: Colors.blueAccent[100]
       ),
+       textColor: Palette.nsbmgreen,
+       child: Row(
+         children: <Widget>[
+           ShaderMask(
+             shaderCallback: (rect) =>Palette.createRoomGradient.createShader(rect),
+             child: Icon(Icons.video_call,
+           size:35.0,
+           color: Colors.white,
+           ),
+             )
+           
+         ],
+       ),
       );
     
   }
