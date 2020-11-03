@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:newsfeed_ui_2/config/palette.dart';
 import 'package:newsfeed_ui_2/data/data.dart';
 import 'package:newsfeed_ui_2/models/models.dart';
 import 'package:newsfeed_ui_2/widgets/profile_avatar.dart';
@@ -13,18 +15,34 @@ class PostContainer extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 5.0),
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       color: Colors.white,
-      child: Padding(
+      child: Column(
+        children: <Widget>[
+          Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           _postHeader(post: post),
           const SizedBox(height: 4.0,),
-          Text(post.caption)
+          Text(post.caption),
+          post.imageUrl != null ? const SizedBox.shrink() : const SizedBox(height: 6.0,)
 
         ],
       ),
-        ), 
+        ),
+        post.imageUrl != null ? 
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child:  CachedNetworkImage(imageUrl: post.imageUrl),
+          )
+       
+        : const SizedBox.shrink(),
+        Padding(padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: _postStats(post:post),
+        )
+        ],
+      ) 
+       
       
     );
   }
@@ -70,5 +88,53 @@ class _postHeader  extends StatelessWidget {
          )
       ],
     );
+  }
+}
+
+class _postStats extends StatelessWidget {
+  final Post post;
+
+  const _postStats({Key key,@required this.post}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+          Row(
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.all(4.0),
+          decoration: BoxDecoration(
+            color: Palette.facebookBlue,
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(
+            Icons.thumb_up,
+            size: 10.0,
+            color: Colors.white,
+          ),
+        ),const SizedBox(width: 4.0,),
+        Expanded(child: Text(
+          '${post.likes}', style: TextStyle(
+            color: Colors.grey[600],
+          ),
+        ),),
+        
+        Text(
+          '${post.comments} Comments', style: TextStyle(
+            color: Colors.grey[600],
+          ),
+        ),
+        const SizedBox(width:8.0),
+        Text(
+          '${post.shares} Shares', style: TextStyle(
+            color: Colors.grey[600],
+          ),
+        )
+      ],
+    ),
+    
+      ],
+    );
+    
   }
 }
