@@ -4,6 +4,7 @@ import 'package:newsfeed_ui_2/config/palette.dart';
 import 'package:newsfeed_ui_2/data/data.dart';
 import 'package:newsfeed_ui_2/widgets/circle_button.dart';
 import 'package:newsfeed_ui_2/widgets/widgets.dart';
+import 'package:newsfeed_ui_2/models/models.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -58,8 +59,15 @@ class HomeScreen extends StatelessWidget {
             stories: stories,
           )
         )
-          )
-      
+          ),
+      SliverList(
+        delegate: SliverChildBuilderDelegate((context, index){
+          final Post post = posts[index];
+          return PostContainer(post:post);       
+          },
+          childCount: posts.length,
+          ),
+        )
         ]
       ),
     );
