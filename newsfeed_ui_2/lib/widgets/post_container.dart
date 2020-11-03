@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:newsfeed_ui_2/config/palette.dart';
 import 'package:newsfeed_ui_2/data/data.dart';
 import 'package:newsfeed_ui_2/models/models.dart';
@@ -132,7 +133,20 @@ class _postStats extends StatelessWidget {
         )
       ],
     ),
-    
+    const Divider(),
+    Row(
+      children: <Widget>[
+        _PostButton(
+          icon: Icon(
+            MdiIcons.thumbUpOutline,
+            color: Colors.grey[600],
+            size: 20.0,
+          ),
+          label : 'Like',
+          onTap: () => print('Like'),
+        )
+      ],
+    )
       ],
     );
     
