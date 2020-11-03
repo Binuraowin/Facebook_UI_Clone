@@ -13,12 +13,19 @@ class PostContainer extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 5.0),
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       color: Colors.white,
-      child: Column(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          _postHeader(post: post)
+          _postHeader(post: post),
+          const SizedBox(height: 4.0,),
+          Text(post.caption)
+
         ],
       ),
+        ), 
+      
     );
   }
 }
@@ -33,9 +40,15 @@ class _postHeader  extends StatelessWidget {
       children: <Widget>[
         ProfileAvatar(imageUrl: post.user.imageUrl),
         const SizedBox(width:8.0),
-        Column(
+        Expanded(
+          child:   Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(post.user.name),
+            Text(post.user.name,
+            style: const TextStyle(
+              fontWeight: FontWeight.w600
+            ),
+            ),
             Row(
               children: <Widget>[
                 Text('${post.timeAgo} .',
@@ -51,6 +64,10 @@ class _postHeader  extends StatelessWidget {
             )
           ],
         )
+          ),
+        IconButton(icon: const Icon(Icons.more_horiz),
+         onPressed: () => print('More'),
+         )
       ],
     );
   }
