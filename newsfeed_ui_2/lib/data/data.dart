@@ -1,8 +1,8 @@
 import 'package:newsfeed_ui_2/models/models.dart';
 final User currentUser = User(
-  name: 'Marcus Ng',
+  name: 'NSBM',
   imageUrl:
-      'https://images.unsplash.com/photo-1578133671540-edad0b3d689e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
+      'https://www.nsbm.ac.lk/wp-content/uploads/2019/08/footer_logo.png',
 );
 
 final List<User> onlineUsers = [
@@ -168,11 +168,11 @@ final List<Story> stories = [
 final List<Post> posts = [
   Post(
     user: currentUser,
-    caption: 'Check out these cool puppers',
+    caption: 'NSBM',
     timeAgo: '58m',
-    imageUrl: 'https://images.unsplash.com/photo-1525253086316-d0c936c814f8',
+    imageUrl: 'https://www.nsbm.ac.lk/wp-content/uploads/2019/08/footer_logo.png',
     likes: 1202,
-    comments: 184,
+    comments: 120,
     shares: 96,
   ),
   Post(

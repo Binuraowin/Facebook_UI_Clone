@@ -34,7 +34,8 @@ class PostContainer extends StatelessWidget {
         post.imageUrl != null ? 
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child:  CachedNetworkImage(imageUrl: post.imageUrl),
+          child: Image.network(post.imageUrl),
+          // CachedNetworkImage(imageUrl: post.imageUrl),
           )
        
         : const SizedBox.shrink(),
@@ -136,15 +137,15 @@ class _postStats extends StatelessWidget {
     const Divider(),
     Row(
       children: <Widget>[
-        _PostButton(
-          icon: Icon(
-            MdiIcons.thumbUpOutline,
-            color: Colors.grey[600],
-            size: 20.0,
-          ),
-          label : 'Like',
-          onTap: () => print('Like'),
-        )
+        // _PostButton(
+        //   icon: Icon(
+        //     MdiIcons.thumbUpOutline,
+        //     color: Colors.grey[600],
+        //     size: 20.0,
+        //   ),
+        //   label : 'Like',
+        //   onTap: () => print('Like'),
+        // )
       ],
     )
       ],
