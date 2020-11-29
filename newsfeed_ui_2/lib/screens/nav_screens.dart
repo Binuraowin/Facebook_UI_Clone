@@ -31,11 +31,11 @@ class _NavScreenState extends State<NavScreen> {
     return DefaultTabController(
       length: _icons.length,
       child: Scaffold(
-        body: _screens[_selectedIndex],
-        // body: IndexedStack(
-        //   index: _selectedIndex,
-        //   children: _screens,
-        // ),
+        // body: _screens[_selectedIndex],
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _screens,
+        ),
         bottomNavigationBar: Container(
           padding: const EdgeInsets.only(bottom: 12.0),
           color: Colors.white,
